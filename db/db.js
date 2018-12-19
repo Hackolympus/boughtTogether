@@ -9,6 +9,7 @@ db.once('open', function() {
 });
 
 var itemSchema = new mongoose.schema({
+    id : Number,
     title : String,
     author : String,
     bookType : String,

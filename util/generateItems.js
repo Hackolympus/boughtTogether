@@ -31,14 +31,19 @@ const read = (callback) => {
     for (let i = 0; i < n; i++) {
         let temp = {
             title : String,
-            author : String
+            author : String,
+            id: i
         }
-        for (let key in temp) {
         //title, author
          let rand = Math.floor(Math.random()*n)
-            temp[key] = data[rand];
+            temp.title = data[rand];
+            rand = Math.floor(Math.random()*n)
+            temp.author = data[rand]
+            rand = Math.floor(Math.random()*n)
+            temp.author = temp.author + " " + data[rand];
            // temp.imgUrl = temp.title + ' - ' + temp.author;
-        }
+        
+        //author
         //rating
         temp.rating = Number((Math.random()*5).toString().slice(0,3))
 
@@ -64,7 +69,20 @@ const read = (callback) => {
             }
         }
     }
+
+    var genBuyTogether = (arr) => {
+        for (let i = 0; i < arr.length; i++) {
+            let tempArr = [];
+            let tempLength = Math.floor(Math.random() * 4);
+            for (let j = 0; j < tempLength; j++) {
+                tempArr.push(arr[Math.floor(Math.random() * 100)]);
+                arr[i].boughtTogether = tempArr;
+
+            }
+        }
+    }
     genRelItems(arr);
+    genBuyTogether(arr);
     console.log(arr);
   }
 
