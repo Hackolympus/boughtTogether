@@ -15,10 +15,10 @@
 var webpack = require("webpack");
 var path = require("path");
 
-// Build directory is where the bundle file will be placed
-var BUILD_DIR = path.resolve(__dirname, "react-client/dist");
+// Build directory is where the bundle file will be pla ced
+var BUILD_DIR = path.resolve(__dirname, "client/dist");
 // App directory is where all of your raw JSX files will be placed
-var APP_DIR = path.resolve(__dirname, "react-client/src");
+var APP_DIR = path.resolve(__dirname, "client/src");
 
 // The files in the app directory will get transpiled and packaged into one
 // file, bundle.js, which will get saved in the BUILD_DIR.
@@ -28,7 +28,7 @@ var APP_DIR = path.resolve(__dirname, "react-client/src");
 // While developing your app in react, you'll want to have two terminal tabs open -
 // one that is running `npm run dev-react` and one that is running `npm start`
 var config = {
-  entry: __dirname + "/client/src/index.jsx",
+  entry: APP_DIR + "/index.jsx",
   module: {
     rules: [
       {
@@ -37,7 +37,7 @@ var config = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react", -"@babel/preset-env"]
+            presets: ["@babel/preset-react"]
           }
         }
       }
@@ -45,7 +45,7 @@ var config = {
   },
   output: {
     filename: "bundle.js",
-    path: __dirname + "/client/dist"
+    path: BUILD_DIR
   }
 };
 module.exports = config;

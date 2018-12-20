@@ -2,20 +2,25 @@
   "name": "boughttogether",
   "version": "1.0.0",
   "description": "",
-  "main": "server/index.js",
+  "main": "config.js",
   "dependencies": {
-    "babel-loader": "^8.0.4",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.0",
-    "node": "^11.4.0",
     "nodemon": "^1.18.9",
-    "react": "^16.6.3",
-    "sequelize": "^4.42.0",
-    "webpack": "^4.28.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "jest": "^23.6.0",
+    "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server",

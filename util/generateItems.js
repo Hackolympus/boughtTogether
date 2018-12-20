@@ -91,7 +91,7 @@ const genArr = (err, data) => {
       arr[i] = new itemModel(arr[i]);
   }
 
-    //make relevant items and bought together then save
+    //make relevantitems and boughttogether then save
   arr.map(item => {
     genRelItems(item, arr);
     genBuyTogether(item, arr);
