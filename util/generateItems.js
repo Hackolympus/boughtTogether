@@ -1,4 +1,5 @@
 var fs = require('fs')
+var db = require('../db/db').db
 
 const read = (callback) => {
     fs.readFile('ipsum.txt', (err, data) => {
@@ -53,7 +54,7 @@ const read = (callback) => {
         //price
         temp.priceDollars = genPriceDollars();
         temp.priceCents = genPriceCents()
-
+        temp.price = Number(temp.priceDollars  +"" +temp.priceCents)
         //end
         arr.push(temp);
     }
@@ -83,7 +84,18 @@ const read = (callback) => {
     }
     genRelItems(arr);
     genBuyTogether(arr);
-    console.log(arr);
+    var itemModel = db.model
+    arr.map((product)=> {
+        // console.log(product);
+        var item = new itemModel(product)
+        item.save((err)=>{
+            if(err){
+                console.log(err)
+            }
+        });
+        // console.log(item, 'saved');
+    })
+
   }
 
 
