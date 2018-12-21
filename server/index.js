@@ -18,7 +18,7 @@ app.get("/listing/:number", (req, res) => {
   db.findOne({ id: id }, (err, item) => {
     Promise.all(
       item.relevantItems.map(dat => {
-        return db.findById({ _id: dat._id }).exec();
+        return db.findOne({ id: dat }).exec();
       })
     ).then(response => {
       res.send(response);

@@ -71,7 +71,7 @@ const genArr = (err, data) => {
       for (let j = 0; j < tempLength; j++) {
         // tempArr.push(arr[Math.floor(Math.random() * n)]);
         // arr[i].relevantItems = tempArr;
-        obj.relevantItems.push(arr[Math.floor(Math.random() * n)]._id);
+        obj.relevantItems.push(arr[Math.floor(Math.random() * n)].id);
       }
   };
 
@@ -82,7 +82,7 @@ const genArr = (err, data) => {
       for (let j = 0; j < tempLength; j++) {
         // tempArr.push(arr[Math.floor(Math.random() * n)]);
         // arr[i].boughtTogether = tempArr;
-        obj.boughtTogether.push(arr[Math.floor(Math.random() * n)]._id);
+        obj.boughtTogether.push(arr[Math.floor(Math.random() * n)].id);
       }
   };
   var itemModel = db.model;

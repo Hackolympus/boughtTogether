@@ -21,8 +21,8 @@ var itemSchema = new mongoose.Schema({
     rating : Number,
     prime : Boolean,
     imgUrl : String,
-    relevantItems: [{type: ObjectId, ref: 'Item'}],
-    boughtTogether: [{type: ObjectId, ref: 'Item'}]
+    relevantItems: [],
+    boughtTogether: []
 })
 var itemModel = mongoose.model('Item', itemSchema)
 
