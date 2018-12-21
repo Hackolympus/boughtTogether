@@ -22,6 +22,6 @@ test('the data is an array of objects', () => {
 test('the statuscode is 200', () => {
     expect.assertions(1);
     return makeGet().then(data => {
-        expect (data).toBe(200)
+        expect(data.status).toBe(200)
     })
 })
