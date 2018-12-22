@@ -13,7 +13,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/listing/:number", (req, res) => {
-  let data = [];
   let id = Number(req.params.number);
   db.findOne({ id: id }, (err, item) => {
     Promise.all(

@@ -1,30 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import RelatedItems from './relatedItems';
+import RelatedItems from './relatedItems.jsx';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-        currentItems : []
+      currentItems: []
     }
   }
 
   componentDidMount() {
-    axios.get("localhost:3015/listing/1", () => {
-    }).then((response) => {
-        this.setState({
-            currentItem : response
-        });
-    })
+    axios.get("/listing/1").then((response) => {
+      this.setState({
+        currentItems: response.data
+      });
+    }).catch((err) => console.log(err))
   }
   render() {
     return (
+      <div>Customers who bought this item also bought
+
       <div>
-        eatshit
-        <RelatedItems list = {this.state.currentItems} />
-      </div>
+          <RelatedItems list={this.state.currentItems} />
+        </div></div>
     );
   }
 }
