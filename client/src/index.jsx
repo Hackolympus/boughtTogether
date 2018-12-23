@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentItems: []
+      currentItems: [],
+      currentPage: 0
     }
   }
 
@@ -21,10 +22,10 @@ class App extends React.Component {
   render() {
     return (
       <div>Customers who bought this item also bought
-
       <div>
-          <RelatedItems list={this.state.currentItems} />
-        </div></div>
+          <RelatedItems list={this.state.currentItems} page ={this.state.currentPage}/>
+        </div>
+      </div>
     );
   }
 }

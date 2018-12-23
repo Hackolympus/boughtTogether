@@ -1,4 +1,16 @@
 .relItems {
     float:left;
     background-color:red;
+    margin-left:2%;
+    margin-bottom:2%;
+}
+
+img {
+    width : 175px;
+    height: 200px;
+    background-color:blue;
+}
+.relItemsTxt{
+    position: relative;
+ 
 }

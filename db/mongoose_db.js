@@ -19,10 +19,11 @@ var itemSchema = new mongoose.Schema({
     priceCents : Number,
     price : Number,
     rating : Number,
+    ratingCount : Number,
     prime : Boolean,
     imgUrl : String,
-    relevantItems: [],
-    boughtTogether: []
+    relevantItems: {},
+    boughtTogether: {}
 })
 var itemModel = mongoose.model('Item', itemSchema)
 

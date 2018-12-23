@@ -14,7 +14,7 @@ const read = callback => {
 
 const genArr = (err, data) => {
   data = data.toString().split(" ");
-  let n = 100;
+  let n = 101;
   let arr = [];
   var genPriceDollars = () => {
     dollar = Math.random()
@@ -52,6 +52,7 @@ const genArr = (err, data) => {
     //author
     //rating
     temp.rating = Number((Math.random() * 5).toString().slice(0, 3));
+    temp.ratingCount = Number((Math.random() * 5).toString().slice(15));
 
     //prime status
     temp.prime = Boolean(Math.round(Math.random()));
@@ -66,24 +67,36 @@ const genArr = (err, data) => {
 
   var genRelItems = (obj, arr) => {
     // for (let i = 0; i < arr.length; i++) {
-      // let tempArr = [];
-      let tempLength = Math.floor(Math.random() * 30);
+      // let tempArr = [];l
+      let tempObj = {};
+      let tempLength = Math.floor(Math.random() * 25)+15;
       for (let j = 0; j < tempLength; j++) {
         // tempArr.push(arr[Math.floor(Math.random() * n)]);
         // arr[i].relevantItems = tempArr;
-        obj.relevantItems.push(arr[Math.floor(Math.random() * n)].id);
+        let rand = arr[Math.floor(Math.random() * n)].id;      
+       
+        if(!tempObj[rand]) { 
+        tempObj[rand] = rand;
+        obj.relevantItems.push(rand)
       }
+    }
   };
 
   var genBuyTogether = (obj, arr) => {
     // for (let i = 0; i < arr.length; i++) {
       // let tempArr = [];
+      let tempObj = {};
       let tempLength = Math.floor(Math.random() * 4);
       for (let j = 0; j < tempLength; j++) {
         // tempArr.push(arr[Math.floor(Math.random() * n)]);
         // arr[i].boughtTogether = tempArr;
-        obj.boughtTogether.push(arr[Math.floor(Math.random() * n)].id);
+        let rand = arr[Math.floor(Math.random() * n)].id
+        
+        if(!tempObj[rand]) {
+        tempObj[rand] = rand;
+        obj.boughtTogether.push(rand)
       }
+    }
   };
   var itemModel = db.model;
   //make objectID 
