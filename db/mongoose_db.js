@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 
-var ObjectId = mongoose.Schema.Types.ObjectId;
 mongoose.connect('mongodb://localhost/amazon')
 
 var db = mongoose.connection;
@@ -22,8 +21,8 @@ var itemSchema = new mongoose.Schema({
     ratingCount : Number,
     prime : Boolean,
     imgUrl : String,
-    relevantItems: {},
-    boughtTogether: {}
+    relevantItems: [],
+    boughtTogether: []
 })
 var itemModel = mongoose.model('Item', itemSchema)
 

@@ -4,12 +4,17 @@ var path = require("path");
 const app = express();
 const port = 3015;
 const db = require("../db/mongoose_db").db.model;
+const axios = require('axios');
+const signature = require('../config').signature;
+const aws =  require('aws-sdk');
+const uuid = require('uuid')
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get("/", (req, res) => {
   res.send("hello");
+  axios.get()
 });
 
 app.get("/listing/:number", (req, res) => {

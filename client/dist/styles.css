@@ -14,13 +14,14 @@
     height:50px;
     background-color:green;
     top:100px;
-    float: left;
     position: relative;
 }
 #btnPrevPage {
+    float: left;
 }
 #btnNextPage{
-    left:25px;
+    float: right;
+    right:50px;
 }
 
 .thumb {
