@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from "axios";
 
 class relatedItems extends React.Component {
   constructor(props) {
@@ -12,8 +13,9 @@ class relatedItems extends React.Component {
           <a className = "btn" id="btnPrevPage" href='#'
           onClick ={this.props.prevPage}></a>
         {this.props.list.map(item => {
+
           return <div className='relItems' key={item.id} >
-            <img src={item.imageUrl} className ="thumb"></img>
+            <img src={"http://localhost:3015/bucket/" + item.id} className ="thumb"></img>
             <div className='relitem' id='relItemsTitle'>{item.title}</div>
             <div className='relitem' id='relItemsAuthor'>{item.author}</div>
             <div className='relitem' id='relItemsRating'>{item.rating}</div>

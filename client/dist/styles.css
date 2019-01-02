@@ -1,6 +1,6 @@
 .relItems {
     float:left;
-    background-color:red;
+    /* background-color:red; */
     margin-left:25px;
     margin-bottom:25px;
 }
@@ -27,7 +27,7 @@
 .thumb {
     width : 150px;
     height: 200px;
-    background-color:blue;
+    /* background-color:blue; */
 }
 .relItemsTxt{
     position: relative;

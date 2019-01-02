@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import axios from "axios";
+import Axios from "axios";
 import RelatedItems from './relatedItems.jsx';
 
 class App extends React.Component {
@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   loadData() {
-    axios.get("/listing/1").then((response) => {
+    Axios.get("/listing/1").then((response) => {
       this.setState({
         currentItems: response.data,
         currentMax: Math.floor((window.innerWidth - 150) / 175)
