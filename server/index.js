@@ -54,12 +54,25 @@ app.get("/bucket/:number", (req, res) => {
  });
 });
 
+app.get("/related/:number", (req, res) => {
+  let id = Number(req.params.number);
+  db.findOne({ id: id }, (err, item) => {
+    Promise.all(
+      item.boughtTogether.map(data => {
+        return db.findOne({ id: data }).exec();
+      })
+    ).then(response => {
+      res.send(response);
+    });
+  });
+});
+
 app.get("/listing/:number", (req, res) => {
   let id = Number(req.params.number);
   db.findOne({ id: id }, (err, item) => {
     Promise.all(
-      item.relevantItems.map(dat => {
-        return db.findOne({ id: dat }).exec();
+      item.relevantItems.map(data => {
+        return db.findOne({ id: data }).exec();
       })
     ).then(response => {
       res.send(response);

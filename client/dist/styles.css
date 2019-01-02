@@ -1,5 +1,4 @@
 .relItems {
-    float:left;
     /* background-color:red; */
     margin-left:25px;
     margin-bottom:25px;
@@ -21,9 +20,13 @@
 }
 #btnNextPage{
     float: right;
-    right:50px;
+    right:25px;
 }
-
+.xsThumb {
+    width : 125px;
+    height: 166px;
+    /* background-color:blue; */
+}
 .thumb {
     width : 150px;
     height: 200px;
@@ -33,6 +36,25 @@
     position: relative;
  
 }
+.btItems {
+    display:flex;
+    flex-direction: row;
+}
+.totalBox {
+    display:flex;
+    flex-direction: column;
+}
+.buyTgthrItems {
+    float:left;
+}
 
-.relCarousel {
+.relCarouselInner{
+    
+  display: inline-flex;
+  flex-direction: row;
+  width:50vw;
+}
+.boughtTogether {
+    display: flex;
+    flex-direction: row;
 }

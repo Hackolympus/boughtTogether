@@ -12,6 +12,7 @@ class relatedItems extends React.Component {
       <div className = "relCarousel">
           <a className = "btn" id="btnPrevPage" href='#'
           onClick ={this.props.prevPage}></a>
+          <div className = "relCarouselInner">
         {this.props.list.map(item => {
 
           return <div className='relItems' key={item.id} >
@@ -25,6 +26,7 @@ class relatedItems extends React.Component {
             <div className='relitem' id='relItemsPrime'>{item.prime}</div>
           </div>
         })}
+        </div>
           <a className = "btn" id="btnNextPage" href='#'
           onClick ={this.props.nextPage}></a>
       </div>

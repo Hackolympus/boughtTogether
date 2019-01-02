@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Axios from "axios";
 import RelatedItems from './relatedItems.jsx';
+import BoughtTogether from './boughtTogether.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -44,6 +45,7 @@ class App extends React.Component {
 
   loadData() {
     Axios.get("/listing/1").then((response) => {
+      console.log(response)
       this.setState({
         currentItems: response.data,
         currentMax: Math.floor((window.innerWidth - 150) / 175)
@@ -57,6 +59,11 @@ class App extends React.Component {
 
   render() {
     return (
+      <div> 
+        <div>Frequently bought together 
+          <BoughtTogether></BoughtTogether>
+        </div>
+        
       <div>Customers who bought this item also bought
           <RelatedItems
           nextPage={this.nextPage}
@@ -64,6 +71,7 @@ class App extends React.Component {
           list={this.state.currentItems.slice
             (this.state.currentPage * this.state.currentMax, 
               this.state.currentPage * this.state.currentMax + this.state.currentMax)} />
+      </div>
       </div>
     );
   }
