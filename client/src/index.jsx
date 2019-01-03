@@ -16,9 +16,12 @@ class App extends React.Component {
     this.nextPage = this.nextPage.bind(this);
     this.loadData = this.loadData.bind(this);
   }
+
   nextPage() {
     if (Math.floor(this.state.currentItems.length /
-      ((this.state.currentPage + 1) * this.state.currentMax)) === 0) {
+      ((this.state.currentPage + 1) * this.state.currentMax)) === 0 ||
+      (this.state.currentItems.length /
+      ((this.state.currentPage + 1) * this.state.currentMax))===1) {
       this.setState({
         currentPage: 0
       });
@@ -29,9 +32,13 @@ class App extends React.Component {
       })
     }
   }
+
   prevPage() {
     if (this.state.currentPage === 0) {
       let temp = Math.floor(this.state.currentItems.length / this.state.currentMax);
+      if (this.state.currentItems.length / ( temp * this.state.currentMax) === 1) {
+        temp--;
+      }
       this.setState({
         currentPage: temp
       })
@@ -45,10 +52,9 @@ class App extends React.Component {
 
   loadData() {
     Axios.get("/listing/1").then((response) => {
-      console.log(response)
       this.setState({
         currentItems: response.data,
-        currentMax: Math.floor((window.innerWidth - 150) / 175)
+        currentMax: Math.floor((window.innerWidth - 130) / 175)
       });
     }).catch((err) => console.log(err))
   }
@@ -63,7 +69,7 @@ class App extends React.Component {
         <div>Frequently bought together 
           <BoughtTogether></BoughtTogether>
         </div>
-        
+
       <div>Customers who bought this item also bought
           <RelatedItems
           nextPage={this.nextPage}

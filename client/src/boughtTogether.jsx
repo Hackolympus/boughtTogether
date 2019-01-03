@@ -32,20 +32,30 @@ class BoughtTogether extends React.Component {
     render() {
         return (
             <div className = "boughtTogether">
-                {this.state.relatedItems.map((item) => {
+                {this.state.relatedItems.map((item, index) => {
                    return <div className ="buyTgthrItems" key = {item.id}>
-                   <img src = {"http://localhost:3015/bucket/" + item.id} className = "xsThumb"></img>
+                   {index === 0 ? (
+                       <img src = {"http://localhost:3015/bucket/" + item.id} className = "xsThumb"></img>
+                   ) : (
+                       <a href = "#"><img src = {"http://localhost:3015/bucket/" + item.id} className = "xsThumb"></img></a>
+                   )}
                    </div>
                 })}
+                
                 <div className = "totalBox">
                 <div>Total price: {this.state.totalPrice} </div>
                 <div>add to cart</div>
                 <div>add to list</div>
                 </div>
                 <div className = "list">
-                {this.state.relatedItems.map((item) => {
+                {this.state.relatedItems.map((item, index) => {
                    return <div className = "btItems">
-                   <div>{item.title} </div>
+                   <input type = "checkbox"></input>
+                    {index === 0 ? (
+                        <div>This item:{item.title} </div>
+                    ) : (
+                   <div >{item.title} </div>
+                    )}
                    <div> ${item.priceDollars}.{item.priceCents} </div>
                    </div>
                 })}

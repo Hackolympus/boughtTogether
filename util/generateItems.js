@@ -97,6 +97,7 @@ const genArr = (err, data) => {
         obj.boughtTogether.push(rand)
       }
     }
+    obj.boughtTogether.unshift(obj.id)
   };
   var itemModel = db.model;
   //make objectID 

@@ -15,7 +15,8 @@ class relatedItems extends React.Component {
           <div className = "relCarouselInner">
         {this.props.list.map(item => {
 
-          return <div className='relItems' key={item.id} >
+          return <div className='relItems' key={item.id} 
+          ><a href = "#">
             <img src={"http://localhost:3015/bucket/" + item.id} className ="thumb"></img>
             <div className='relitem' id='relItemsTitle'>{item.title}</div>
             <div className='relitem' id='relItemsAuthor'>{item.author}</div>
@@ -24,7 +25,7 @@ class relatedItems extends React.Component {
             <div className='relitem' id='bookType'>{item.bookType}</div>
             <div className='relitem' id='relItemsPrice'>${item.priceDollars}.{item.priceCents}</div>
             <div className='relitem' id='relItemsPrime'>{item.prime}</div>
-          </div>
+            </a>  </div>
         })}
         </div>
           <a className = "btn" id="btnNextPage" href='#'

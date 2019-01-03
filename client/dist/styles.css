@@ -9,11 +9,21 @@
 }
 
 .btn{
-    width :50px;
-    height:50px;
-    background-color:green;
-    top:100px;
+    width :40px;
+    height:40px;
+    top: 110px;
     position: relative;
+    background: #e7e9ec;
+    border-radius: 3px;
+    border-color: #ADB1B8 #A2A6AC #8D9096;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    text-decoration: none!important;
+    vertical-align: middle;
 }
 #btnPrevPage {
     float: left;
