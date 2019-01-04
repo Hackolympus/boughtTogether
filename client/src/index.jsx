@@ -8,6 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      currentListing: 2,
       currentItems: [],
       currentPage: 0,
       currentMax: 5
@@ -51,7 +52,7 @@ class App extends React.Component {
   }
 
   loadData() {
-    Axios.get("/listing/1").then((response) => {
+    Axios.get("/listing/" + this.state.currentListing).then((response) => {
       this.setState({
         currentItems: response.data,
         currentMax: Math.floor((window.innerWidth - 130) / 175)
@@ -67,7 +68,7 @@ class App extends React.Component {
     return (
       <div> 
         <div>Frequently bought together 
-          <BoughtTogether></BoughtTogether>
+          <BoughtTogether currentListing = {this.state.currentListing}></BoughtTogether>
         </div>
 
       <div>Customers who bought this item also bought

@@ -32,11 +32,7 @@
     float: right;
     right:25px;
 }
-.xsThumb {
-    width : 125px;
-    height: 166px;
-    /* background-color:blue; */
-}
+
 .thumb {
     width : 150px;
     height: 200px;
@@ -46,6 +42,24 @@
     position: relative;
  
 }
+
+.relCarouselInner{
+    
+  display: inline-flex;
+  flex-direction: row;
+}
+
+
+
+/* bought together */
+
+
+.list {
+    clear: both;
+}
+.buyTgthrItems {
+    float:left;
+}
 .btItems {
     display:flex;
     flex-direction: row;
@@ -53,18 +67,10 @@
 .totalBox {
     display:flex;
     flex-direction: column;
+    clear:right;
 }
-.buyTgthrItems {
-    float:left;
-}
-
-.relCarouselInner{
-    
-  display: inline-flex;
-  flex-direction: row;
-  width:50vw;
-}
-.boughtTogether {
-    display: flex;
-    flex-direction: row;
+.xsThumb {
+    width : 125px;
+    height: 166px;
+    /* background-color:blue; */
 }

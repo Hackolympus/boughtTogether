@@ -18,10 +18,6 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 var bucketParams = {
   Bucket : 'chairchair'
 };  
-var test = {
-  Bucket : 'chairchair',
-  Key: '1.jpg'
-};  
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../client/dist")));
@@ -40,8 +36,8 @@ app.get("/bucket", (req, res) => {
 });
 
 app.get("/bucket/:number", (req, res) => {
-  test.Key = req.params.number + ".jpg";
-  s3.getObject(test, function(err, data) {
+  bucketParams.Key = req.params.number + ".jpg";
+  s3.getObject(bucketParams, function(err, data) {
     if (err) {
        console.log("Error", err);
        res.sendStatus(404);
