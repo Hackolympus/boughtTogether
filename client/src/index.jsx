@@ -66,12 +66,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div> 
-        <div>Frequently bought together 
+      <div id = "boughtTogetherBody"> 
+        <div className = "btHead">Frequently bought together</div><div> 
           <BoughtTogether currentListing = {this.state.currentListing}></BoughtTogether>
         </div>
-
-      <div>Customers who bought this item also bought
+        <div className = "boughtTogetherSeperator"></div>
+      <div className = "relHead">Customers who bought this item also bought</div><div> 
           <RelatedItems
           nextPage={this.nextPage}
           prevPage={this.prevPage}

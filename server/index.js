@@ -4,9 +4,9 @@ var path = require("path");
 const app = express();
 const port = 3015;
 const db = require("../db/mongoose_db").db.model;
-const axios = require('axios');
 const cred = require('../config');
 const AWS =  require('aws-sdk');
+var compression = require('compression')
 
 AWS.config.update({
   ergion: 'us-east-1',
@@ -19,6 +19,7 @@ var bucketParams = {
   Bucket : 'chairchair'
 };  
 
+app.use(compression())
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 

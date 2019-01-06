@@ -10,25 +10,25 @@ class relatedItems extends React.Component {
     return (
 
       <div className = "relCarousel">
-          <a className = "btn" id="btnPrevPage" href='#'
+          <a className = "relBtn" id="relBtnPrevPage" href='#'
           onClick ={this.props.prevPage}></a>
           <div className = "relCarouselInner">
         {this.props.list.map(item => {
 
           return <div className='relItems' key={item.id} 
           ><a href = "#">
-            <img src={"http://localhost:3015/bucket/" + item.id} className ="thumb"></img>
-            <div className='relitem' id='relItemsTitle'>{item.title}</div>
-            <div className='relitem' id='relItemsAuthor'>{item.author}</div>
-            <div className='relitem' id='relItemsRating'>{item.rating}</div>
-            <div className='relitem' id='relItemsRatingCount'>{item.ratingCount}</div>
-            <div className='relitem' id='bookType'>{item.bookType}</div>
-            <div className='relitem' id='relItemsPrice'>${item.priceDollars}.{item.priceCents}</div>
-            <div className='relitem' id='relItemsPrime'>{item.prime}</div>
+            <img src={"http://localhost:3015/bucket/" + item.id} className ="relThumb"></img>
+            <div className='relItem' id='relItemsTitle'>{item.title}</div>
+            <div className='relItem' id='relItemsAuthor'>{item.author}</div>
+            <div className='relItem' id='relItemsRating'>{item.rating}</div>
+            <div className='relItem' id='relItemsRatingCount'>{item.ratingCount}</div>
+            <div className='relItem' id='bookType'>{item.bookType}</div>
+            <div className='relItem' id='relItemsPrice'>${item.priceDollars}.{item.priceCents}</div>
+            <div className='relItem' id='relItemsPrime'>{item.prime}</div>
             </a>  </div>
         })}
         </div>
-          <a className = "btn" id="btnNextPage" href='#'
+          <a className = "relBtn" id="relBtnNextPage" href='#'
           onClick ={this.props.nextPage}></a>
       </div>
     )

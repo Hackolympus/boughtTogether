@@ -29,7 +29,6 @@ class BoughtTogether extends React.Component {
       }
       
       handleCheck(event) {
-          console.log(document.getElementById(event.target.value + "thumb").innerText)
           let price = (Number(event.target.dataset.price))
         if (event.target.checked === false) {
           let sum = this.state.priceNumber - price + ""
@@ -58,28 +57,28 @@ class BoughtTogether extends React.Component {
         return (
             <div className = "boughtTogether">
                 {this.state.relatedItems.map((item, index) => {
-                   return <div className ="buyTgthrItems" id ={item.title + "thumb"} key = {item.id}>
+                   return <div className ="btBuyTgthrItems" id ={item.title + "thumb"} key = {item.id}>
                    {index === 0 ? (
-                       <img src = {"http://localhost:3015/bucket/" + item.id} className = "xsThumb"></img>
+                       <img src = {"http://localhost:3015/bucket/" + item.id} className = "btThumb"></img>
                    ) : (
-                       <a href = "#"><img src = {"http://localhost:3015/bucket/" + item.id} className = "xsThumb"></img></a>
+                       <a href = "#"><img src = {"http://localhost:3015/bucket/" + item.id} className = "btThumb"></img></a>
                    )}
                    </div>
                 })}
                 
-                <div className = "totalBox">
+                <div className = "btTotalBox">
                 <div>Total price: {this.state.totalPrice} </div>
-                <div>add to cart</div>
-                <div>add to list</div>
+                <div className = "btBtn">add to cart</div>
+                <div className = "btBtn">add to list</div>
                 </div>
-                <div className = "list">
+                <div className = "btList">
                 {this.state.relatedItems.map((item, index) => {
                    return <div className = "btItems" key ={item.id}>
                    <input type = "checkbox" data-price = {item.price} value = {item.title} onChange = {this.handleCheck} defaultChecked></input>
                     {index === 0 ? (
-                        <div>This item:{item.title}... </div>
+                        <div><b>This item:</b> {item.title} . . . </div>
                     ) : (
-                   <div >{item.title}... </div>
+                   <div >{item.title} . . . </div>
                     )}
                    <div> ${item.priceDollars}.{item.priceCents} </div>
                    </div>

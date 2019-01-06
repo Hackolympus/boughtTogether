@@ -1,14 +1,24 @@
+
+#boughtTogetherBody {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:11px;
+}
+.boughtTogetherSeperator{
+    widows: 100vh;
+    height:50px;
+}
+
+/* relatedItems */
 .relItems {
     /* background-color:red; */
     margin-left:25px;
     margin-bottom:25px;
 }
-
 .relItem {
     left:25px
 }
 
-.btn{
+.relBtn{
     width :40px;
     height:40px;
     top: 110px;
@@ -25,15 +35,18 @@
     text-decoration: none!important;
     vertical-align: middle;
 }
-#btnPrevPage {
+.relBtn:hover{
+    background: lightcoral;
+}
+#relBtnPrevPage {
     float: left;
 }
-#btnNextPage{
+#relBtnNextPage{
     float: right;
     right:25px;
 }
 
-.thumb {
+.relThumb {
     width : 150px;
     height: 200px;
     /* background-color:blue; */
@@ -49,28 +62,57 @@
   flex-direction: row;
 }
 
-
+.relHead{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:16px;
+    margin-bottom:15px;
+}
 
 /* bought together */
 
-
-.list {
+.btHead{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:16px;
+    margin-bottom:15px;
+}
+.btList {
     clear: both;
 }
-.buyTgthrItems {
+.btBuyTgthrItems {
     float:left;
 }
 .btItems {
     display:flex;
     flex-direction: row;
 }
-.totalBox {
+.btTotalBox {
     display:flex;
     flex-direction: column;
     clear:right;
 }
-.xsThumb {
+.btThumb {
     width : 125px;
     height: 166px;
     /* background-color:blue; */
+}
+.btBtn{
+    width :60px;
+    height:25px;
+    top:10px;
+    margin-bottom:10px;
+    position: relative;
+    background: #e7e9ec;
+    border-radius: 3px;
+    border-color: #ADB1B8 #A2A6AC #8D9096;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btBtn:hover{
+    background: lightcoral;
 }
