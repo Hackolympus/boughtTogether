@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
-
-mongoose.connect('mongodb://localhost/amazon')
+let pw = "4PqbKvziOyxiClGI"
+let uri = "mongodb+srv://chair:"+pw+"@cluster0-kykmw.mongodb.net/amazon?retryWrites=true"
+mongoose.connect(uri)
 
 var db = mongoose.connection;
 

@@ -9,7 +9,7 @@ const AWS =  require('aws-sdk');
 var compression = require('compression')
 
 AWS.config.update({
-  ergion: 'us-east-1',
+  region: 'us-east-1',
   accessKeyId: cred.accessKey,
   secretAccessKey: cred.secretKey
 })

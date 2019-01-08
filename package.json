@@ -2,7 +2,6 @@
   "name": "boughttogether",
   "version": "1.0.0",
   "description": "",
-  "main": "config.js",
   "dependencies": {
     "aws-sdk": "^2.382.0",
     "axios": "^0.18.0",
